@@ -58,26 +58,33 @@
 import React from "react"
 
 export default class App extends React.Component{
-  state={  val1:null, val2:null, result:"Valor ainda não foi definido", symbol:""};
+  state={  val1:null, val2:null, result:"", symbol:""};
 
   handleChangeVal1 = (e) => this.setState({ val1: e.target.value });
   handleChangeVal2 = (e) => this.setState({ val2: e.target.value });
 
   add = () => this.setState({result: Number(this.state.val1) + Number(this.state.val2), symbol:"+"})
   decrease = () => this.setState({result: this.state.val1 - this.state.val2, symbol:"-"})
-  result = () => this.state.result.length !== 0 ? this.state.result : "Erro, calculo indisponivel"
-
-
+  multiply = () => this.setState({result: this.state.val1 * this.state.val2, symbol:"x"})
+  division = () => this.setState({result: Number(this.state.val1) / Number(this.state.val2), symbol:"÷"})
+  clear = () => this.setState({ result: "", symbol: ""})
+  inp = () => {
+    if(this.state.val1 === 0) return this.state.result = "Cralho"
+    if(this.state.val2 === "") return this.state.result = "Cralh2"
+    if(this.state.result !== 0) return this.state.result
+  }
   render(){
-    // let { symbol } = this.state;
     return(
       <>
-        <input type="number" onChange={this.handleChangeVal1} placeholder="Coloca o valor aqui..."/>
+        <input type="number" onChange={this.handleChangeVal1} value={this.state.val1} placeholder="Coloca o valor aqui..."/>
         <p>{this.state.symbol}</p>
-        <input type="number" onChange={this.handleChangeVal2} placeholder="Coloca o valor aqui..."/>
-        <p>{this.result()}</p>
-        <button onClick={this.add}>Somar</button>
-        <button onClick={this.decrease}>Menos</button>
+        <input type="number" onChange={this.handleChangeVal2} value={this.state.val2} placeholder="Coloca o valor aqui..."/>
+        <p>{this.inp()}</p> 
+        <button onClick={this.clear}>Zerar</button> 
+
+        <button onClick={this.decrease}>-</button>
+        <button onClick={this.multiply}>x</button>
+        <button onClick={this.division}>÷</button>
       </> 
     )
   };
