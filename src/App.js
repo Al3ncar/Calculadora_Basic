@@ -36,6 +36,7 @@ export default class App extends React.Component{
 
 
 import React from "react"
+import "./App.css"
 
 export default class App extends React.Component{
   state = { inpu1:"", inpu2:"", result: null, simb:null}
@@ -50,20 +51,23 @@ export default class App extends React.Component{
 
   render(){
     return(
-      <>
-        <h1>{this.state.result}</h1>
-        
-        <div>
-          <input type="number" name="" placeholder="Digite um numero..." onChange={this.handleChangeInput1} value={this.state.inpu1}/>
-          <input type="number" name="" placeholder="Digite um numero..." onChange={this.handleChangeInput2} value={this.state.inpu2}/>
-        </div>
+      <section className="streat_container">
+          <h1>{this.state.result}</h1>
+          
+          <div>
+            <input type="number" name="" placeholder="Digite um numero..." onChange={this.handleChangeInput1} value={this.state.inpu1}/>
+            <input type="number" name="" placeholder="Digite um numero..." onChange={this.handleChangeInput2} value={this.state.inpu2}/>
+          </div>
+          <div className="btn_cars">
+            <button className="btn_add" onClick={this.add}>SOMAR</button>
 
-        <button onClick={this.add}>SOMAR</button>
-        <button onClick={this.descrease}>DIMINUIR</button>
-        <button onClick={this.multiply}>MULTIPLICAR</button>
-        <button onClick={this.division}>DIVIDIR</button>
+            <button className="btn_desc" onClick={this.descrease}>DIMINUIR</button>
 
-      </>
+            <button className="btn_mult" onClick={this.multiply}>MULTIPLICAR</button>
+
+            <button className="btn_div" onClick={this.division}>DIVIDIR</button>
+          </div>
+      </section>
     )
   } 
 }
