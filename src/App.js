@@ -58,14 +58,19 @@ export default class App extends React.Component{
             <input type="number" name="" placeholder="Digite um numero..." onChange={this.handleChangeInput1} value={this.state.inpu1}/>
             <input type="number" name="" placeholder="Digite um numero..." onChange={this.handleChangeInput2} value={this.state.inpu2}/>
           </div>
-          <div className="btn_cars">
-            <button className="btn_add" onClick={this.add}>SOMAR</button>
-
-            <button className="btn_desc" onClick={this.descrease}>DIMINUIR</button>
-
-            <button className="btn_mult" onClick={this.multiply}>MULTIPLICAR</button>
-
-            <button className="btn_div" onClick={this.division}>DIVIDIR</button>
+          <div className="cars_cont">
+            <div className="btn_cars">
+                <span className="roof_car_add"></span>
+                <span className="roof_car_desc"></span>
+                <span className="roof_car_mult"></span>
+                <span className="roof_car_div"></span>
+              </div>
+            <div className="btn_cars">
+              <button className="btn_add" onClick={this.add}>SOMAR</button>
+              <button className="btn_desc" onClick={this.descrease}>DIMINUIR</button>
+              <button className="btn_mult" onClick={this.multiply}>MULTIPLICAR</button>
+              <button className="btn_div" onClick={this.division}>DIVIDIR</button>
+            </div>
           </div>
       </section>
     )

@@ -23,12 +23,17 @@
     height: 30%;
     background-color: yellow;
 }
-
-.btn_cars{
+.cars_cont{
     width: 100%;
-    background-color: red;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+}
+.btn_cars{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
 }
 
 .btn_add, .btn_desc, .btn_mult, .btn_div{
@@ -36,7 +41,16 @@
     padding: 1%;
     position: relative;
     border-radius: 2vw 2vw 0 0;
+    border: none;
+    font-size: 1.5vw;
+    font-weight: bolder;
+    color: white;
 }
+
+.btn_add{ background-color: #6aaf6a; }
+.btn_desc{ background-color: #d26565;}
+.btn_mult{ background-color: rgb(255, 255, 0);}
+.btn_div{background-color: blue;}
 
 .btn_add::before, .btn_desc::before, .btn_mult::before, .btn_div::before{
     content:"";
@@ -56,3 +70,19 @@
     top:50%;
     left: 75%;
 }
+
+.roof_cont{
+    width: 100%;
+    background-color: gren;
+}
+
+.roof_car_add, .roof_car_desc, .roof_car_mult, .roof_car_div{
+    width:10%; padding: 1.4%;
+    background-color: yellow;
+    border-radius:2vw 2vw 0 0 ;
+}
+
+.roof_car_add{background-color: green;}
+.roof_car_desc{background-color: red;}
+.roof_car_mult{background-color: rgb(151, 151, 0);}
+.roof_car_div{background-color: darkblue;}
