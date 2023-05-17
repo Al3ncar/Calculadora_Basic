@@ -44,18 +44,22 @@ export default class App extends React.Component{
   handleChangeInput1 = e => this.setState({ inpu1: e.target.value})
   handleChangeInput2 = e => this.setState({ inpu2: e.target.value})
 
-  add = () => this.setState({result: Number(this.state.inpu1) + Number(this.state.inpu2)})
-  descrease = () => this.setState({result: this.state.inpu1 - this.state.inpu2})
-  multiply = () => this.setState({ result: this.state.inpu1 * this.state.inpu2})
-  division = () => this.setState({ result: this.state.inpu1 / this.state.inpu2})
+  add = () => this.setState({result: Number(this.state.inpu1) + Number(this.state.inpu2), simb: "+"})
+  descrease = () => this.setState({result: this.state.inpu1 - this.state.inpu2, simb: "-"})
+  multiply = () => this.setState({ result: this.state.inpu1 * this.state.inpu2, simb: "x"})
+  division = () => this.setState({ result: this.state.inpu1 / this.state.inpu2, simb: "÷"})
 
   render(){
     return(
       <section className="streat_container">
-          <h1>{this.state.result}</h1>
-          
           <div>
+            <h1>{this.state.result}</h1> 
+            
+          </div>
+          
+          <div className="inputs_cont">
             <input type="number" name="" placeholder="Digite um numero..." onChange={this.handleChangeInput1} value={this.state.inpu1}/>
+            <p>{this.state.simb}</p>
             <input type="number" name="" placeholder="Digite um numero..." onChange={this.handleChangeInput2} value={this.state.inpu2}/>
           </div>
           <div className="cars_cont">

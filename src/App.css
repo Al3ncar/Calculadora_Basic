@@ -17,11 +17,29 @@
    background-repeat: no-repeat;
    position: relative;
 }
+h1{
+    font-size:2.5vw ;
+}
+.inputs_cont{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
 
-.emoji_face{
+input{
     width: 30%;
-    height: 30%;
-    background-color: yellow;
+    padding: 1%;
+    border: none; outline: none;
+    border-radius: 2vw;
+    text-align: center;
+    font-size: 1.5vw;
+}
+p{
+    font-size:2vw;
+    padding: 1% 2%;
+    border-radius: 50%;
+    
+    background-color: #fff;
 }
 .cars_cont{
     width: 100%;
@@ -40,7 +58,7 @@
     width: 20%;
     padding: 1%;
     position: relative;
-    border-radius: 2vw 2vw 0 0;
+    border-radius: 2vw 2vw 1vw 1vw;
     border: none;
     font-size: 1.5vw;
     font-weight: bolder;
@@ -79,7 +97,7 @@
 .roof_car_add, .roof_car_desc, .roof_car_mult, .roof_car_div{
     width:10%; padding: 1.4%;
     background-color: yellow;
-    border-radius:2vw 2vw 0 0 ;
+    border-radius:2vw 2vw 0 0;
 }
 
 .roof_car_add{background-color: green;}
